@@ -1,6 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1.1-1.2-机器学习基本术语</title>
+    <url>/2022/12/25/1.1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/</url>
+    <content><![CDATA[<p><strong>摘要：</strong> 西瓜书绪论第一节和第二节主要针对各种机器学习的术语进行解释，在此存档，方便到时候忘记某些术语可以在此处进行查找</p>
+<span id="more"></span>
+
+<h4 id="1-1引言："><a href="#1-1引言：" class="headerlink" title="1.1引言："></a>1.1引言：</h4><ul>
+<li><p><strong>模型（model）：</strong> 从数据中学到的结果（特指西瓜书中的“模型”，就目前来看，“模型”一词在不同的地方也存在一些不同的解释）</p>
+</li>
+<li><p><strong>模式：</strong> 局部性的结果（某种规则，比如限定某个条件A后得出的结果，就叫一种模式）</p>
+</li>
+</ul>
+<h4 id="1-2基本术语：（以下还是引用西瓜书中的西瓜来举例）"><a href="#1-2基本术语：（以下还是引用西瓜书中的西瓜来举例）" class="headerlink" title="1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）"></a>1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）</h4><ul>
+<li><p><strong>示例（instance）或样本（sample）：</strong> 其中的每条记录是关于一个事件或者对象的描述 （例如西瓜A：脆甜，黄瓤，沙包大，这就是一个样本）</p>
+</li>
+<li><p><strong>数据集（dataset）：</strong> 由多个样本构成的集合。</p>
+</li>
+<li><p><strong>属性（attribute）或特征（feature）：</strong> 反应事件或对象在某方面的表现后者性质（例如上文提到的西瓜口感，瓜瓤颜色，西瓜大小等特点）</p>
+</li>
+<li><p><strong>属性值（attribute value）：</strong> 上述特征对应的具体取值（可以理解为字典结构{”特征A“：”特征值“}，方便理解）</p>
+</li>
+<li><p><strong>属性空间（attribute space）或样本空间（sample space）：</strong> n个不同特征或属性构成的n维空间，空间中的每个点都是一种独一无二的样本（可以想象一个三维坐标系，每个坐标都代表一个特征，然后在这个三维空间中任意点的坐标对应三个特征的取值）</p>
+</li>
+<li><p><strong>特征向量（feature vector）：</strong> 由上文我们可知空间中每个示例都对应一个坐标向量，因此我们称这些向量为特征向量</p>
+</li>
+<li><p><strong>维数（dimensionality）：</strong> 样本空间的维数（多少维向量，维数就是多少）</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>学习（learning）或训练（training）：</strong> 从数据中学得模型的过程</p>
+</li>
+<li><p><strong>训练数据（training data）：</strong> 训练过程中使用的数据</p>
+</li>
+<li><p><strong>训练样本（training sample）：</strong> 训练数据中的每一个样本</p>
+</li>
+<li><p><strong>训练集（training set）：</strong> 训练样本组成的集合（感觉和训练数据是一回事，有问题再补充吧~~）</p>
+</li>
+<li><p><strong>假设（hypothesis）：</strong> 学习的模型对应于某种潜在的规律（我们训练模型的目的就是找到这种规律，类似使用某种算法找到目标结果）</p>
+</li>
+<li><p><strong>真相或真实（ground-truth）：</strong> 上文提到的规律本身</p>
+</li>
+<li><p><strong>学习器（learner）：</strong> 模型的别称，可以理解为学习算法再给定数据和参数空间上的实例化（不同的参数会得到不同的结果）</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>预测（prediction）：</strong> 学习任务的一种，通过输入相关信息来预测结果（具体分为<strong>分类</strong>和<strong>回归</strong>）</p>
+</li>
+<li><p><strong>标记（label）：</strong> 示例结果的信息，我们想让模型输出的结果</p>
+</li>
+<li><p><strong>样例（example）：</strong> 包含两个部分，<strong>样本</strong>和<strong>标记</strong></p>
+</li>
+<li><p><strong>标记空间（label space）：</strong> 一般地，使用 (x<sub>i</sub>,  y<sub>i</sub>)表示第i个样例，其中y<sub>i</sub>为样本x<sub>i</sub>的标记（可以同上边样本空间一同理解）</p>
+</li>
+<li><p><strong>分类（classification）：</strong> 预测离散值（例如好瓜、坏瓜）</p>
+<ul>
+<li><p><strong>二分类（binary classification）：</strong> 预测结果只有两个，一个是<strong>正类（positive class）</strong> 一个是<strong>负类（negative class）</strong>{0，1}or{-1，1}</p>
+</li>
+<li><p><strong>多分类（multi-class classification）：</strong> 预测多个结果{1，2，3，…}每个值对应一个结果</p>
+</li>
+</ul>
+</li>
+<li><p><strong>回归（regression）：</strong> 预测连续值（例如瓜的成熟度）</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>测试（testing）：</strong> 学得模型后，使用其进行预测的过程</p>
+</li>
+<li><p><strong>测试样本（testing sample）：</strong> 被预测的样本</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>聚类（clustering）：</strong> 可以将训练集中的样本分为若干组，以提取组与组之间的潜在特征（可以理解为小时候一组一组的玩伴，玩伴之间都有一些相同的兴趣什么的）</p>
+</li>
+<li><p><strong>簇（cluster）：</strong> 聚类后训练集形成的组，每个组都是一个簇，<strong>聚类后可以提取数据潜在信息</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>学习任务可以分为两类：<strong>监督学习（supervised learning）</strong> （分类和回归）和<strong>非监督学习（unsupervised learning）</strong> （聚类）</p>
+</li>
+<li><p><strong>泛化（generalization）：</strong> 学习的模型适应新样本的能力，强泛化能力的模型能更好地适应整个样本空间，通常假设样本空间中全体都服从一个未知的<strong>分布（distribution）</strong> 每个样本都是独立地从分布上采样，即”独立同分布“（independent and identically distributed）一般来说，训练的越多，获得的信息越多，这样学习的模型的泛化能力更强</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>《机器学习》</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>术语解释</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1.3假设空间</title>
+    <url>/2022/12/25/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/</url>
+    <content><![CDATA[<p><strong>摘要：</strong> 本届主要是针对假设空间的定义解释，并且对假设空间规模的计算规则进行解释</p>
+<span id="more"></span>
+
+<p>    <strong>归纳（induction）</strong> 与 <strong>演绎（deduction）</strong> 是科学推理的两大基本手段。</p>
+<ul>
+<li><p>前者是从特殊到一般的 <strong>”泛化“（generalization）</strong> 过程（从特殊的一些数据总结出一般的规律）</p>
+</li>
+<li><p>后者是一般到特殊的 <strong>”特化“（specialization）</strong></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>《机器学习》</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一切的开始</title>
+    <url>/2022/12/24/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/</url>
+    <content><![CDATA[<p>    现在是22年的结束，今年这一年经历了很多很多，随着上半年某个竞赛的获奖，可能自己感觉到自己变得极度自大，再加上身边好多的同学的影响吧，逐渐变得不近人情，之前处的很好的人际关系也有些崩坏，建立这个博客的意思不仅是一个电子笔记分享和存档，也是想让自己有动力学习。希望自己23年再看到这个博客的时候能够无悔这一年的努力~~</p>
+<p>    其实还是很感谢AIDC人工智能协会，让我在大三上回到了之前积极向上的状态，从各位同学身上都或多或少学到了一些社交，学习上的知识，虽然目前自己还有一些小毛病，有时候做错了在线下还是会自我反思，希望自己经过这个寒假的调整，会变的更好吧~~</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《Vector Calculus,Linear Algebra and Differential Forms:A Unified Approach》---第一章（总结）</title>
     <url>/2022/12/25/%E3%80%8AVector-Calculus-Linear-Algebra-and-Differential-Forms-A-Unified-Approach%E3%80%8B/</url>
     <content><![CDATA[<p><strong>前言：</strong> 本书通过3Blue1Brown推荐，是一本非常通俗易懂的书，目前没找到汉译版，纯英有点难啃，当厕所书看，随缘更新</p>
@@ -15,153 +145,9 @@
       </tags>
   </entry>
   <entry>
-    <title>1.3假设空间</title>
-    <url>/2022/12/25/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/</url>
-    <content><![CDATA[<p><strong>摘要：</strong> 本届主要是针对假设空间的定义解释，并且对假设空间规模的计算规则进行解释</p>
-<span id="more"></span>
-<p><strong>归纳（induction）</strong> 与 <strong>演绎（deduction）</strong> 是科学推理的两大基本手段。</p>
-<ul>
-<li>
-<p>前者是从特殊到一般的 <strong>”泛化“（generalization）</strong> 过程（从特殊的一些数据总结出一般的规律）</p>
-</li>
-<li>
-<p>后者是一般到特殊的 <strong>”特化“（specialization）</strong></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>《机器学习》</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1.1-1.2-机器学习基本术语</title>
-    <url>/2022/12/25/1.1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/</url>
-    <content><![CDATA[<p><strong>摘要：</strong> 西瓜书绪论第一节和第二节主要针对各种机器学习的术语进行解释，在此存档，方便到时候忘记某些术语可以在此处进行查找</p>
-<span id="more"></span>
-<h4 id="11引言"><a class="markdownIt-Anchor" href="#11引言"></a> 1.1引言：</h4>
-<ul>
-<li>
-<p><strong>模型（model）：</strong> 从数据中学到的结果（特指西瓜书中的“模型”，就目前来看，“模型”一词在不同的地方也存在一些不同的解释）</p>
-</li>
-<li>
-<p><strong>模式：</strong> 局部性的结果（某种规则，比如限定某个条件A后得出的结果，就叫一种模式）</p>
-</li>
-</ul>
-<h4 id="12基本术语以下还是引用西瓜书中的西瓜来举例"><a class="markdownIt-Anchor" href="#12基本术语以下还是引用西瓜书中的西瓜来举例"></a> 1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）</h4>
-<ul>
-<li>
-<p><strong>示例（instance）或样本（sample）：</strong> 其中的每条记录是关于一个事件或者对象的描述 （例如西瓜A：脆甜，黄瓤，沙包大，这就是一个样本）</p>
-</li>
-<li>
-<p><strong>数据集（dataset）：</strong> 由多个样本构成的集合。</p>
-</li>
-<li>
-<p><strong>属性（attribute）或特征（feature）：</strong> 反应事件或对象在某方面的表现后者性质（例如上文提到的西瓜口感，瓜瓤颜色，西瓜大小等特点）</p>
-</li>
-<li>
-<p><strong>属性值（attribute value）：</strong> 上述特征对应的具体取值（可以理解为字典结构{”特征A“：”特征值“}，方便理解）</p>
-</li>
-<li>
-<p><strong>属性空间（attribute space）或样本空间（sample space）：</strong> n个不同特征或属性构成的n维空间，空间中的每个点都是一种独一无二的样本（可以想象一个三维坐标系，每个坐标都代表一个特征，然后在这个三维空间中任意点的坐标对应三个特征的取值）</p>
-</li>
-<li>
-<p><strong>特征向量（feature vector）：</strong> 由上文我们可知空间中每个示例都对应一个坐标向量，因此我们称这些向量为特征向量</p>
-</li>
-<li>
-<p><strong>维数（dimensionality）：</strong> 样本空间的维数（多少维向量，维数就是多少）</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><strong>学习（learning）或训练（training）：</strong> 从数据中学得模型的过程</p>
-</li>
-<li>
-<p><strong>训练数据（training data）：</strong> 训练过程中使用的数据</p>
-</li>
-<li>
-<p><strong>训练样本（training sample）：</strong> 训练数据中的每一个样本</p>
-</li>
-<li>
-<p><strong>训练集（training set）：</strong> 训练样本组成的集合（感觉和训练数据是一回事，有问题再补充吧~~）</p>
-</li>
-<li>
-<p><strong>假设（hypothesis）：</strong> 学习的模型对应于某种潜在的规律（我们训练模型的目的就是找到这种规律，类似使用某种算法找到目标结果）</p>
-</li>
-<li>
-<p><strong>真相或真实（ground-truth）：</strong> 上文提到的规律本身</p>
-</li>
-<li>
-<p><strong>学习器（learner）：</strong> 模型的别称，可以理解为学习算法再给定数据和参数空间上的实例化（不同的参数会得到不同的结果）</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><strong>预测（prediction）：</strong> 学习任务的一种，通过输入相关信息来预测结果（具体分为<strong>分类</strong>和<strong>回归</strong>）</p>
-</li>
-<li>
-<p><strong>标记（label）：</strong> 示例结果的信息，我们想让模型输出的结果</p>
-</li>
-<li>
-<p><strong>样例（example）：</strong> 包含两个部分，<strong>样本</strong>和<strong>标记</strong></p>
-</li>
-<li>
-<p><strong>标记空间（label space）：</strong> 一般地，使用 (x<sub>i</sub>,  y<sub>i</sub>)表示第i个样例，其中y<sub>i</sub>为样本x<sub>i</sub>的标记（可以同上边样本空间一同理解）</p>
-</li>
-<li>
-<p><strong>分类（classification）：</strong> 预测离散值（例如好瓜、坏瓜）</p>
-<ul>
-<li>
-<p><strong>二分类（binary classification）：</strong> 预测结果只有两个，一个是<strong>正类（positive class）</strong> 一个是<strong>负类（negative class）</strong>{0，1}or{-1，1}</p>
-</li>
-<li>
-<p><strong>多分类（multi-class classification）：</strong> 预测多个结果{1，2，3，…}每个值对应一个结果</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>回归（regression）：</strong> 预测连续值（例如瓜的成熟度）</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><strong>测试（testing）：</strong> 学得模型后，使用其进行预测的过程</p>
-</li>
-<li>
-<p><strong>测试样本（testing sample）：</strong> 被预测的样本</p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p><strong>聚类（clustering）：</strong> 可以将训练集中的样本分为若干组，以提取组与组之间的潜在特征（可以理解为小时候一组一组的玩伴，玩伴之间都有一些相同的兴趣什么的）</p>
-</li>
-<li>
-<p><strong>簇（cluster）：</strong> 聚类后训练集形成的组，每个组都是一个簇，<strong>聚类后可以提取数据潜在信息</strong></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>学习任务可以分为两类：<strong>监督学习（supervised learning）</strong> （分类和回归）和<strong>非监督学习（unsupervised learning）</strong> （聚类）</p>
-</li>
-<li>
-<p><strong>泛化（generalization）：</strong> 学习的模型适应新样本的能力，强泛化能力的模型能更好地适应整个样本空间，通常假设样本空间中全体都服从一个未知的<strong>分布（distribution）</strong> 每个样本都是独立地从分布上采样，即”独立同分布“（independent and identically distributed）一般来说，训练的越多，获得的信息越多，这样学习的模型的泛化能力更强</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>《机器学习》</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-        <tag>术语解释</tag>
-      </tags>
+    <title>数据结构---线性表</title>
+    <url>/2022/12/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>优美的数学思维---第一章（总结）</title>
@@ -178,24 +164,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一切的开始</title>
-    <url>/2022/12/24/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/</url>
-    <content><![CDATA[<p>现在是22年的结束，今年这一年经历了很多很多，随着上半年某个竞赛的获奖，可能自己感觉到自己变得极度自大，再加上身边好多的同学的影响吧，逐渐变得不近人情，之前处的很好的人际关系也有些崩坏，建立这个博客的意思不仅是一个电子笔记分享和存档，也是想让自己有动力学习。希望自己23年再看到这个博客的时候能够无悔这一年的努力~~</p>
-<p>其实还是很感谢AIDC人工智能协会，让我在大三上回到了之前积极向上的状态，从各位同学身上都或多或少学到了一些社交，学习上的知识，虽然目前自己还有一些小毛病，有时候做错了在线下还是会自我反思，希望自己经过这个寒假的调整，会变的更好吧~~</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构---线性表</title>
-    <url>/2022/12/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>机器学习---第一章（总结）</title>
     <url>/2022/12/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%88%E6%80%BB%E7%BB%93%EF%BC%89/</url>
     <content><![CDATA[<p><strong>前言：</strong> 很多人推荐的书，江湖人称西瓜书，买来快半年了，啃的也不是很多，零零散散看了一点，之前一直当一个检索用的工具书，现在打算从头开始一点一点学习</p>
@@ -205,8 +173,8 @@
         <category>《机器学习》</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>机器学习</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
 </search>
