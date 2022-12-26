@@ -11,7 +11,7 @@
     <content><![CDATA[<p><strong>摘要：</strong> 本届主要是针对假设空间的定义解释，并且对假设空间规模的计算规则进行解释</p>
 <span id="more"></span>
 
-<h4 id="1-概念解释"><a href="#1-概念解释" class="headerlink" title="1.概念解释"></a>1.概念解释</h4><p>例如我们现在有这么一个数据集：(蓝色部分为label)</p>
+<h4 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h4><p>例如我们现在有这么一个数据集：(蓝色部分为label)</p>
 <table>
     <tr>
         <td>编号</td>
@@ -53,7 +53,12 @@
 <p>我们训练模型最终的目的是通过已知的数据（例如青绿、蜷缩、浊响的瓜为好瓜）来推断未在数据集中的瓜的好坏，使模型“泛化”。此时所有的假设所构成的这个空间（在本数据集中为一个三维空间）就是<strong>假设空间</strong></p>
 <p>本处的假设空间是由：“$(色泽&#x3D;?)\wedge (根蒂&#x3D;?)\wedge(敲声&#x3D;?)$”可能取值所形成的<strong>假设</strong>所组成的</p>
 <p>由于我们无法确定某个特征是否对我们最后的结果是否产生影响，因此我们引入 <strong>通配符“*”</strong> 来表示这项特征无论取什么值都能预测最后的结果。</p>
-<h4 id="2-假设空间规模大小计算"><a href="#2-假设空间规模大小计算" class="headerlink" title="2.假设空间规模大小计算"></a>2.假设空间规模大小计算</h4><p>以上一小节中列举出的</p>
+<h4 id="假设空间规模大小计算"><a href="#假设空间规模大小计算" class="headerlink" title="假设空间规模大小计算"></a>假设空间规模大小计算</h4><p>以上一小节中列举出的数据集为例，假设每个特征都有3个种类，加上通配符”*“，我们每一个特征都有4种，而且可能世界上没有 <strong>”好瓜“</strong> 这个概念，因此我们使用 $\phi$ 来表示这个假设，因此我们最终的假设空间规模大小为：4 x 4 x 4 + 1 &#x3D; 65</p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/1.jpg" alt="image1"></p>
+<h4 id="版本空间（version-space）"><a href="#版本空间（version-space）" class="headerlink" title="版本空间（version space）"></a>版本空间（version space）</h4><p>还是我们第一节提到的那个数据集，我们发现前数据1，2只有第一个特征不同，所以我们可以使用“$(色泽&#x3D;*)\wedge (根蒂&#x3D;蜷缩)\wedge(敲声&#x3D;浊响)$”来表示好瓜，而且其衍生出的三个假设:</p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/3.png" alt="image3"></p>
+<p>前两个满足数据1和数据2，第三个既满足数据1和数据2（即好瓜的条件），也满足数据3，4（即坏瓜的条件），因此，我们最后的<strong>版本空间应该能涵盖所有的好瓜条件，也应该不涵盖任何坏瓜条件</strong>，如下图所示</p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/2.jpg" alt="image2"></p>
 ]]></content>
       <categories>
         <category>《机器学习》</category>
