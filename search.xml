@@ -5,102 +5,71 @@
     <url>/2022/12/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<p><strong>摘要：</strong> 数据结构的各种概念，文字性的偏多，从课后题来看，覆盖的并不全面，有待补充</p>
 <span id="more"></span>
-<h4 id="数据结构基本概念"><a class="markdownIt-Anchor" href="#数据结构基本概念"></a> 数据结构基本概念</h4>
-<h5 id="数据"><a class="markdownIt-Anchor" href="#数据"></a> 数据</h5>
-<p>数据是信息的载体，是<strong>描述客观事物的数、字符及所有能输入到计算机中并被计算机程序识别和处理的符号的集合。</strong> 数据是计算机程序加工的原料。</p>
-<h5 id="数据元素"><a class="markdownIt-Anchor" href="#数据元素"></a> 数据元素</h5>
-<p>数据元素是数据的基本单位，通常作为一个整体进行考虑和处理。一个数据元素由若干个<strong>数据项</strong>构成，数据项是构成元素不可分割的最小单位。例如，<strong>学生记录</strong>就是一个数据元素，而学生姓名、性别、学号，就是这个数据元素的<strong>数据项</strong>。</p>
-<h5 id="数据对象"><a class="markdownIt-Anchor" href="#数据对象"></a> 数据对象</h5>
-<p>数据对象是具有相同性质的数据元素的合集，是数据的一个子集。例如，整数数据的对象就是集合N={…，-2，-1，0，1，2，…}</p>
-<h5 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h5>
-<ol>
-<li>
-<p><strong>原子结构：</strong> 其值不能再分割的数据类型</p>
+
+<h4 id="数据结构基本概念"><a href="#数据结构基本概念" class="headerlink" title="数据结构基本概念"></a>数据结构基本概念</h4><h5 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h5><p>数据是信息的载体，是<strong>描述客观事物的数、字符及所有能输入到计算机中并被计算机程序识别和处理的符号的集合。</strong> 数据是计算机程序加工的原料。</p>
+<h5 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h5><p>数据元素是数据的基本单位，通常作为一个整体进行考虑和处理。一个数据元素由若干个<strong>数据项</strong>构成，数据项是构成元素不可分割的最小单位。例如，<strong>学生记录</strong>就是一个数据元素，而学生姓名、性别、学号，就是这个数据元素的<strong>数据项</strong>。</p>
+<h5 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h5><p>数据对象是具有相同性质的数据元素的合集，是数据的一个子集。例如，整数数据的对象就是集合N&#x3D;{…，-2，-1，0，1，2，…}</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><ol>
+<li><p><strong>原子结构：</strong> 其值不能再分割的数据类型</p>
 </li>
-<li>
-<p><strong>结构类型：</strong> 其值可以再分解为若干成份的数据类型</p>
+<li><p><strong>结构类型：</strong> 其值可以再分解为若干成份的数据类型</p>
 </li>
-<li>
-<p><strong>抽象数据类型：</strong> 抽象数据组织及与之相关的操作，通常用（数据对象，数据关系，基本操作集）构成，分别对应 <strong>（逻辑结构，存储结构，数据的计算）</strong>，详见数据结构的定义</p>
+<li><p><strong>抽象数据类型：</strong> 抽象数据组织及与之相关的操作，通常用（数据对象，数据关系，基本操作集）构成，分别对应 <strong>（逻辑结构，存储结构，数据的计算）</strong>，详见数据结构的定义</p>
 </li>
 </ol>
-<h5 id="数据结构"><a class="markdownIt-Anchor" href="#数据结构"></a> 数据结构</h5>
-<p><strong>数据结构</strong>是相互之间存在一种或多种特定关系的数据元素的集合。在任何问题中，数据元素都不是孤立的，它们之间存在某种关系，这种数据元素相互之间的关系称为结构 <strong>（在下文中会提到各种各样的结构，能更好的理解定义）</strong> 。数据结构包含三个方面的内容：<strong>逻辑结构、存储结构和数据的计算</strong></p>
+<h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><p><strong>数据结构</strong>是相互之间存在一种或多种特定关系的数据元素的集合。在任何问题中，数据元素都不是孤立的，它们之间存在某种关系，这种数据元素相互之间的关系称为结构 <strong>（在下文中会提到各种各样的结构，能更好的理解定义）</strong> 。数据结构包含三个方面的内容：<strong>逻辑结构、存储结构和数据的计算</strong></p>
 <p>数据的<strong>逻辑结构</strong>和<strong>存储结构</strong>是密不可分的两个方面，一个算法的设计取决于所选定的逻辑结构，算法的实现依赖于所采用的存储结构。</p>
-<h4 id="数据结构三要素"><a class="markdownIt-Anchor" href="#数据结构三要素"></a> 数据结构三要素</h4>
-<h5 id="数据的逻辑结构"><a class="markdownIt-Anchor" href="#数据的逻辑结构"></a> 数据的逻辑结构</h5>
-<p>逻辑结构指的数据元素与元素之间的逻辑关系，即从逻辑关系上表述数据。具体的分类如下图所示：</p>
-<p><img src="/images/%E7%BA%BF%E6%80%A7%E8%A1%A8/1.jpg" alt="image1" /></p>
+<h4 id="数据结构三要素"><a href="#数据结构三要素" class="headerlink" title="数据结构三要素"></a>数据结构三要素</h4><h5 id="数据的逻辑结构"><a href="#数据的逻辑结构" class="headerlink" title="数据的逻辑结构"></a>数据的逻辑结构</h5><p>逻辑结构指的数据元素与元素之间的逻辑关系，即从逻辑关系上表述数据。具体的分类如下图所示：</p>
+<p><img src="/images/%E7%BA%BF%E6%80%A7%E8%A1%A8/1.jpg" alt="image1"></p>
 <ul>
-<li>
-<p><strong>集合：</strong> 结构中的数据元素之间除”同属于一个集合“外，无其他任何关系</p>
+<li><p><strong>集合：</strong> 结构中的数据元素之间除”同属于一个集合“外，无其他任何关系</p>
 </li>
-<li>
-<p><strong>线性结构：</strong> 结构中的数据元素之间只存在一对一的关系（线性表，队列，栈）</p>
+<li><p><strong>线性结构：</strong> 结构中的数据元素之间只存在一对一的关系（线性表，队列，栈）</p>
 </li>
-<li>
-<p><strong>树状结构：</strong> 结构中的数据元素之间存在一对多的关系（各种树，根节点和子节点之间的关系）</p>
+<li><p><strong>树状结构：</strong> 结构中的数据元素之间存在一对多的关系（各种树，根节点和子节点之间的关系）</p>
 </li>
-<li>
-<p><strong>图状结构：</strong> 结构中的数据元素之间存在着多对多的关系（有向图，无向图）</p>
+<li><p><strong>图状结构：</strong> 结构中的数据元素之间存在着多对多的关系（有向图，无向图）</p>
 </li>
 </ul>
-<p><img src="/images/%E7%BA%BF%E6%80%A7%E8%A1%A8/2.jpg" alt="image2" /></p>
-<h5 id="数据的存储结构"><a class="markdownIt-Anchor" href="#数据的存储结构"></a> 数据的存储结构</h5>
-<p>存储结构是只数据结构在计算机中的表示（又称<strong>影响</strong>）也称<strong>物理结构</strong>。它包括数据元素的表示和关系的表示。数据的存储结构是用计算机语言实现的逻辑结构，它依赖于计算机语言。</p>
+<p><img src="/images/%E7%BA%BF%E6%80%A7%E8%A1%A8/2.jpg" alt="image2"></p>
+<h5 id="数据的存储结构"><a href="#数据的存储结构" class="headerlink" title="数据的存储结构"></a>数据的存储结构</h5><p>存储结构是只数据结构在计算机中的表示（又称<strong>影响</strong>）也称<strong>物理结构</strong>。它包括数据元素的表示和关系的表示。数据的存储结构是用计算机语言实现的逻辑结构，它依赖于计算机语言。</p>
 <ul>
-<li>
-<p><strong>顺序存储：</strong> 把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关系由存储单元的邻接关系来体现。</p>
+<li><p><strong>顺序存储：</strong> 把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关系由存储单元的邻接关系来体现。</p>
 <ul>
-<li>
-<p><strong>优点：</strong> 随机存取，每个元素占用最少的存储空间（因为只存数据）</p>
+<li><p><strong>优点：</strong> 随机存取，每个元素占用最少的存储空间（因为只存数据）</p>
 </li>
-<li>
-<p><strong>缺点：</strong> 只能使用相邻的一整块存储单元，因此会产生较多外部碎片（相当于把一堆大石块放到一个大箱子里，空的地方会很多）</p>
+<li><p><strong>缺点：</strong> 只能使用相邻的一整块存储单元，因此会产生较多外部碎片（相当于把一堆大石块放到一个大箱子里，空的地方会很多）</p>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>链式存储：</strong> 不要求逻辑上相邻的元素在物理位置上也相邻，借助指示元素存储地址的指针来表示元素之间的逻辑关系 <strong>（一个结点内的存储单元地址连续）</strong></p>
+<li><p><strong>链式存储：</strong> 不要求逻辑上相邻的元素在物理位置上也相邻，借助指示元素存储地址的指针来表示元素之间的逻辑关系 <strong>（一个结点内的存储单元地址连续）</strong></p>
 <ul>
-<li>
-<p><strong>优点：</strong> 不会出现碎片的现象，能充分利用所有存储单元</p>
+<li><p><strong>优点：</strong> 不会出现碎片的现象，能充分利用所有存储单元</p>
 </li>
-<li>
-<p><strong>缺点：</strong> 每个元素需要存储指针从而占用更多的存储空间，只能实现线性存储。（相当于把珍珠项链放盒子，链子也得占一部分空间，不是很形象，目前没什么别的想法）</p>
+<li><p><strong>缺点：</strong> 每个元素需要存储指针从而占用更多的存储空间，只能实现线性存储。（相当于把珍珠项链放盒子，链子也得占一部分空间，不是很形象，目前没什么别的想法）</p>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>索引存储：</strong> 存储元素的同时建立附加的索引表。索引表中每一项为索引项，一般形式为（关键字，地址）</p>
+<li><p><strong>索引存储：</strong> 存储元素的同时建立附加的索引表。索引表中每一项为索引项，一般形式为（关键字，地址）</p>
 <ul>
-<li>
-<p><strong>优点：</strong> 检索速度快</p>
+<li><p><strong>优点：</strong> 检索速度快</p>
 </li>
-<li>
-<p><strong>缺点：</strong> 索引表也会占用额外的空间，索引表的增删查改也会花费一定的时间</p>
+<li><p><strong>缺点：</strong> 索引表也会占用额外的空间，索引表的增删查改也会花费一定的时间</p>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>散列存储：</strong> 根据元素的关键字直接计算该元素的地址，又称为<strong>哈希（Hash）存储</strong>。</p>
+<li><p><strong>散列存储：</strong> 根据元素的关键字直接计算该元素的地址，又称为<strong>哈希（Hash）存储</strong>。</p>
 <ul>
-<li>
-<p><strong>优点：</strong> 检索、增加和删除结点。</p>
+<li><p><strong>优点：</strong> 检索、增加和删除结点。</p>
 </li>
-<li>
-<p><strong>缺点：</strong> 散列函数没有设定好的话，可能会造成元素存储单元的冲突，但是解决冲突会增加时间和空间的开销</p>
+<li><p><strong>缺点：</strong> 散列函数没有设定好的话，可能会造成元素存储单元的冲突，但是解决冲突会增加时间和空间的开销</p>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="数据的运算"><a class="markdownIt-Anchor" href="#数据的运算"></a> 数据的运算</h4>
-<p>施加在数据上的运算包括其定义和实现。运算的定义是针对逻辑结构，指出运算功能；运算的实现是针对存储结构的，指出运算的具体操作步骤。<strong>（一个好的比喻~~理论与实践XD）</strong></p>
-<h4 id="拓展"><a class="markdownIt-Anchor" href="#拓展"></a> 拓展</h4>
-<h5 id="font-color0b0对于两种不同的数据结构逻辑结构和物理结构一定不同吗font"><a class="markdownIt-Anchor" href="#font-color0b0对于两种不同的数据结构逻辑结构和物理结构一定不同吗font"></a> <font color=#0B0>对于两种不同的数据结构，逻辑结构和物理结构一定不同吗？</font></h5>
-<p>两种不同的数据结构，其逻辑结构和物理结构完全有可能相同。例如<strong>二叉树</strong>和<strong>二叉排序树</strong>，二叉排序树可以采用二叉树的逻辑结构和存储方式，二叉树主要是用于表示层次关系，二叉排序树主要是排序与查找，二者的不同之处体现在三要素的 <strong>”数据的计算“</strong> 部分。</p>
-<h5 id="font-color0b0试举一例同一种运算在不同存储方式下进行运算效率不同font"><a class="markdownIt-Anchor" href="#font-color0b0试举一例同一种运算在不同存储方式下进行运算效率不同font"></a> <font color=#0B0>试举一例，同一种运算在不同存储方式下进行，运算效率不同</font></h5>
-<p><strong>线性表：</strong> 在顺序存储结构中，在线性表中插入或删除一个元素，平均要移动一半的元素（现实中插队，你啪的一下插进去，后边的人肯定都要往后），时间复杂度为O(n)；而在链式存储方式下，插入或删除一个元素，只需修改指针的地址（两节火车中间再加一节，只需要把两节火车的连接点接到第三节火车的两边），时间复杂度为O(1)。</p>
+<h4 id="数据的运算"><a href="#数据的运算" class="headerlink" title="数据的运算"></a>数据的运算</h4><p>施加在数据上的运算包括其定义和实现。运算的定义是针对逻辑结构，指出运算功能；运算的实现是针对存储结构的，指出运算的具体操作步骤。<strong>（一个好的比喻~~理论与实践XD）</strong></p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h5 id="对于两种不同的数据结构，逻辑结构和物理结构一定不同吗？"><a href="#对于两种不同的数据结构，逻辑结构和物理结构一定不同吗？" class="headerlink" title="对于两种不同的数据结构，逻辑结构和物理结构一定不同吗？"></a><font color=#0B0>对于两种不同的数据结构，逻辑结构和物理结构一定不同吗？</font></h5><p>两种不同的数据结构，其逻辑结构和物理结构完全有可能相同。例如<strong>二叉树</strong>和<strong>二叉排序树</strong>，二叉排序树可以采用二叉树的逻辑结构和存储方式，二叉树主要是用于表示层次关系，二叉排序树主要是排序与查找，二者的不同之处体现在三要素的 <strong>”数据的计算“</strong> 部分。</p>
+<h5 id="试举一例，同一种运算在不同存储方式下进行，运算效率不同"><a href="#试举一例，同一种运算在不同存储方式下进行，运算效率不同" class="headerlink" title="试举一例，同一种运算在不同存储方式下进行，运算效率不同"></a><font color=#0B0>试举一例，同一种运算在不同存储方式下进行，运算效率不同</font></h5><p><strong>线性表：</strong> 在顺序存储结构中，在线性表中插入或删除一个元素，平均要移动一半的元素（现实中插队，你啪的一下插进去，后边的人肯定都要往后），时间复杂度为O(n)；而在链式存储方式下，插入或删除一个元素，只需修改指针的地址（两节火车中间再加一节，只需要把两节火车的连接点接到第三节火车的两边），时间复杂度为O(1)。</p>
 ]]></content>
       <tags>
         <tag>术语解释</tag>
@@ -113,8 +82,8 @@
     <url>/2022/12/25/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/</url>
     <content><![CDATA[<p><strong>摘要：</strong> 本届主要是针对假设空间的定义解释，并且对假设空间规模的计算规则进行解释</p>
 <span id="more"></span>
-<h4 id="概念解释"><a class="markdownIt-Anchor" href="#概念解释"></a> 概念解释</h4>
-<p>例如我们现在有这么一个数据集：(蓝色部分为label)</p>
+
+<h4 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h4><p>例如我们现在有这么一个数据集：(蓝色部分为label)</p>
 <table>
     <tr>
         <td>编号</td>
@@ -152,17 +121,16 @@
         <td><font color=#0B0>否</font></td>
     </tr>
 </table>
+
 <p>我们训练模型最终的目的是通过已知的数据（例如青绿、蜷缩、浊响的瓜为好瓜）来推断未在数据集中的瓜的好坏，使模型“泛化”。此时所有的假设所构成的这个空间（在本数据集中为一个三维空间）就是<strong>假设空间</strong></p>
-<p>本处的假设空间是由：“<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>色泽</mtext><mo>=</mo><mo stretchy="false">?</mo><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mtext>根蒂</mtext><mo>=</mo><mo stretchy="false">?</mo><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mtext>敲声</mtext><mo>=</mo><mo stretchy="false">?</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(色泽=?)\wedge (根蒂=?)\wedge(敲声=?)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">色</span><span class="mord cjk_fallback">泽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">?</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">根</span><span class="mord cjk_fallback">蒂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">?</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">敲</span><span class="mord cjk_fallback">声</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">?</span><span class="mclose">)</span></span></span></span>”可能取值所形成的<strong>假设</strong>所组成的</p>
+<p>本处的假设空间是由：“$(色泽&#x3D;?)\wedge (根蒂&#x3D;?)\wedge(敲声&#x3D;?)$”可能取值所形成的<strong>假设</strong>所组成的</p>
 <p>由于我们无法确定某个特征是否对我们最后的结果是否产生影响，因此我们引入 <strong>通配符“*”</strong> 来表示这项特征无论取什么值都能预测最后的结果。</p>
-<h4 id="假设空间规模大小计算"><a class="markdownIt-Anchor" href="#假设空间规模大小计算"></a> 假设空间规模大小计算</h4>
-<p>以上一小节中列举出的数据集为例，假设每个特征都有3个种类，加上通配符”*“，我们每一个特征都有4种，而且可能世界上没有 <strong>”好瓜“</strong> 这个概念，因此我们使用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">ϕ</span></span></span></span> 来表示这个假设，因此我们最终的假设空间规模大小为：4 x 4 x 4 + 1 = 65</p>
-<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/1.jpg" alt="image1" /></p>
-<h4 id="版本空间version-space"><a class="markdownIt-Anchor" href="#版本空间version-space"></a> 版本空间（version space）</h4>
-<p>还是我们第一节提到的那个数据集，我们发现前数据1，2只有第一个特征不同，所以我们可以使用“<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>色泽</mtext><mo>=</mo><mo>∗</mo><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mtext>根蒂</mtext><mo>=</mo><mtext>蜷缩</mtext><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mtext>敲声</mtext><mo>=</mo><mtext>浊响</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(色泽=*)\wedge (根蒂=蜷缩)\wedge(敲声=浊响)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">色</span><span class="mord cjk_fallback">泽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∗</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">根</span><span class="mord cjk_fallback">蒂</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">蜷</span><span class="mord cjk_fallback">缩</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">敲</span><span class="mord cjk_fallback">声</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">浊</span><span class="mord cjk_fallback">响</span><span class="mclose">)</span></span></span></span>”来表示好瓜，而且其衍生出的三个假设:</p>
-<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/3.png" alt="image3" /></p>
+<h4 id="假设空间规模大小计算"><a href="#假设空间规模大小计算" class="headerlink" title="假设空间规模大小计算"></a>假设空间规模大小计算</h4><p>以上一小节中列举出的数据集为例，假设每个特征都有3个种类，加上通配符”*“，我们每一个特征都有4种，而且可能世界上没有 <strong>”好瓜“</strong> 这个概念，因此我们使用 $\phi$ 来表示这个假设，因此我们最终的假设空间规模大小为：4 x 4 x 4 + 1 &#x3D; 65</p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/1.jpg" alt="image1"></p>
+<h4 id="版本空间（version-space）"><a href="#版本空间（version-space）" class="headerlink" title="版本空间（version space）"></a>版本空间（version space）</h4><p>还是我们第一节提到的那个数据集，我们发现前数据1，2只有第一个特征不同，所以我们可以使用“$(色泽&#x3D;*)\wedge (根蒂&#x3D;蜷缩)\wedge(敲声&#x3D;浊响)$”来表示好瓜，而且其衍生出的三个假设:</p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/3.png" alt="image3"></p>
 <p>前两个满足数据1和数据2，第三个既满足数据1和数据2（即好瓜的条件），也满足数据3，4（即坏瓜的条件），因此，我们最后的<strong>版本空间应该能涵盖所有的好瓜条件，也应该不涵盖任何坏瓜条件</strong>，如下图所示</p>
-<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/2.jpg" alt="image2" /></p>
+<p><img src="/images/1-3%E5%81%87%E8%AE%BE%E7%A9%BA%E9%97%B4/2.jpg" alt="image2"></p>
 ]]></content>
       <categories>
         <category>《机器学习》</category>
@@ -190,127 +158,94 @@
     <url>/2022/12/25/1.1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/</url>
     <content><![CDATA[<p><strong>摘要：</strong> 西瓜书绪论第一节和第二节主要针对各种机器学习的术语进行解释，在此存档，方便到时候忘记某些术语可以在此处进行查找</p>
 <span id="more"></span>
-<h4 id="11引言"><a class="markdownIt-Anchor" href="#11引言"></a> 1.1引言：</h4>
-<ul>
-<li>
-<p><strong>模型（model）：</strong> 从数据中学到的结果（特指西瓜书中的“模型”，就目前来看，“模型”一词在不同的地方也存在一些不同的解释）</p>
+
+<h4 id="1-1引言："><a href="#1-1引言：" class="headerlink" title="1.1引言："></a>1.1引言：</h4><ul>
+<li><p><strong>模型（model）：</strong> 从数据中学到的结果（特指西瓜书中的“模型”，就目前来看，“模型”一词在不同的地方也存在一些不同的解释）</p>
 </li>
-<li>
-<p><strong>模式：</strong> 局部性的结果（某种规则，比如限定某个条件A后得出的结果，就叫一种模式）</p>
+<li><p><strong>模式：</strong> 局部性的结果（某种规则，比如限定某个条件A后得出的结果，就叫一种模式）</p>
 </li>
 </ul>
-<h4 id="12基本术语以下还是引用西瓜书中的西瓜来举例"><a class="markdownIt-Anchor" href="#12基本术语以下还是引用西瓜书中的西瓜来举例"></a> 1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）</h4>
-<ul>
-<li>
-<p><strong>示例（instance）或样本（sample）：</strong> 其中的每条记录是关于一个事件或者对象的描述 （例如西瓜A：脆甜，黄瓤，沙包大，这就是一个样本）</p>
+<h4 id="1-2基本术语：（以下还是引用西瓜书中的西瓜来举例）"><a href="#1-2基本术语：（以下还是引用西瓜书中的西瓜来举例）" class="headerlink" title="1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）"></a>1.2基本术语：（以下还是引用西瓜书中的西瓜来举例）</h4><ul>
+<li><p><strong>示例（instance）或样本（sample）：</strong> 其中的每条记录是关于一个事件或者对象的描述 （例如西瓜A：脆甜，黄瓤，沙包大，这就是一个样本）</p>
 </li>
-<li>
-<p><strong>数据集（dataset）：</strong> 由多个样本构成的集合。</p>
+<li><p><strong>数据集（dataset）：</strong> 由多个样本构成的集合。</p>
 </li>
-<li>
-<p><strong>属性（attribute）或特征（feature）：</strong> 反应事件或对象在某方面的表现后者性质（例如上文提到的西瓜口感，瓜瓤颜色，西瓜大小等特点）</p>
+<li><p><strong>属性（attribute）或特征（feature）：</strong> 反应事件或对象在某方面的表现后者性质（例如上文提到的西瓜口感，瓜瓤颜色，西瓜大小等特点）</p>
 </li>
-<li>
-<p><strong>属性值（attribute value）：</strong> 上述特征对应的具体取值（可以理解为字典结构{”特征A“：”特征值“}，方便理解）</p>
+<li><p><strong>属性值（attribute value）：</strong> 上述特征对应的具体取值（可以理解为字典结构{”特征A“：”特征值“}，方便理解）</p>
 </li>
-<li>
-<p><strong>属性空间（attribute space）或样本空间（sample space）：</strong> n个不同特征或属性构成的n维空间，空间中的每个点都是一种独一无二的样本（可以想象一个三维坐标系，每个坐标都代表一个特征，然后在这个三维空间中任意点的坐标对应三个特征的取值）</p>
+<li><p><strong>属性空间（attribute space）或样本空间（sample space）：</strong> n个不同特征或属性构成的n维空间，空间中的每个点都是一种独一无二的样本（可以想象一个三维坐标系，每个坐标都代表一个特征，然后在这个三维空间中任意点的坐标对应三个特征的取值）</p>
 </li>
-<li>
-<p><strong>特征向量（feature vector）：</strong> 由上文我们可知空间中每个示例都对应一个坐标向量，因此我们称这些向量为特征向量</p>
+<li><p><strong>特征向量（feature vector）：</strong> 由上文我们可知空间中每个示例都对应一个坐标向量，因此我们称这些向量为特征向量</p>
 </li>
-<li>
-<p><strong>维数（dimensionality）：</strong> 样本空间的维数（多少维向量，维数就是多少）</p>
+<li><p><strong>维数（dimensionality）：</strong> 样本空间的维数（多少维向量，维数就是多少）</p>
 </li>
 </ul>
-<hr />
+<hr>
 <ul>
-<li>
-<p><strong>学习（learning）或训练（training）：</strong> 从数据中学得模型的过程</p>
+<li><p><strong>学习（learning）或训练（training）：</strong> 从数据中学得模型的过程</p>
 </li>
-<li>
-<p><strong>训练数据（training data）：</strong> 训练过程中使用的数据</p>
+<li><p><strong>训练数据（training data）：</strong> 训练过程中使用的数据</p>
 </li>
-<li>
-<p><strong>训练样本（training sample）：</strong> 训练数据中的每一个样本</p>
+<li><p><strong>训练样本（training sample）：</strong> 训练数据中的每一个样本</p>
 </li>
-<li>
-<p><strong>训练集（training set）：</strong> 训练样本组成的集合（感觉和训练数据是一回事，有问题再补充吧~~）</p>
+<li><p><strong>训练集（training set）：</strong> 训练样本组成的集合（感觉和训练数据是一回事，有问题再补充吧~~）</p>
 </li>
-<li>
-<p><strong>假设（hypothesis）：</strong> 学习的模型对应于某种潜在的规律（我们训练模型的目的就是找到这种规律，类似使用某种算法找到目标结果）</p>
+<li><p><strong>假设（hypothesis）：</strong> 学习的模型对应于某种潜在的规律（我们训练模型的目的就是找到这种规律，类似使用某种算法找到目标结果）</p>
 </li>
-<li>
-<p><strong>真相或真实（ground-truth）：</strong> 上文提到的规律本身</p>
+<li><p><strong>真相或真实（ground-truth）：</strong> 上文提到的规律本身</p>
 </li>
-<li>
-<p><strong>学习器（learner）：</strong> 模型的别称，可以理解为学习算法再给定数据和参数空间上的实例化（不同的参数会得到不同的结果）</p>
+<li><p><strong>学习器（learner）：</strong> 模型的别称，可以理解为学习算法再给定数据和参数空间上的实例化（不同的参数会得到不同的结果）</p>
 </li>
 </ul>
-<hr />
+<hr>
 <ul>
-<li>
-<p><strong>预测（prediction）：</strong> 学习任务的一种，通过输入相关信息来预测结果（具体分为<strong>分类</strong>和<strong>回归</strong>）</p>
+<li><p><strong>预测（prediction）：</strong> 学习任务的一种，通过输入相关信息来预测结果（具体分为<strong>分类</strong>和<strong>回归</strong>）</p>
 </li>
-<li>
-<p><strong>标记（label）：</strong> 示例结果的信息，我们想让模型输出的结果</p>
+<li><p><strong>标记（label）：</strong> 示例结果的信息，我们想让模型输出的结果</p>
 </li>
-<li>
-<p><strong>样例（example）：</strong> 包含两个部分，<strong>样本</strong>和<strong>标记</strong></p>
+<li><p><strong>样例（example）：</strong> 包含两个部分，<strong>样本</strong>和<strong>标记</strong></p>
 </li>
-<li>
-<p><strong>标记空间（label space）：</strong> 一般地，使用 (x<sub>i</sub>,  y<sub>i</sub>)表示第i个样例，其中y<sub>i</sub>为样本x<sub>i</sub>的标记（可以同上边样本空间一同理解）</p>
+<li><p><strong>标记空间（label space）：</strong> 一般地，使用 (x<sub>i</sub>,  y<sub>i</sub>)表示第i个样例，其中y<sub>i</sub>为样本x<sub>i</sub>的标记（可以同上边样本空间一同理解）</p>
 </li>
-<li>
-<p><strong>分类（classification）：</strong> 预测离散值（例如好瓜、坏瓜）</p>
+<li><p><strong>分类（classification）：</strong> 预测离散值（例如好瓜、坏瓜）</p>
 <ul>
-<li>
-<p><strong>二分类（binary classification）：</strong> 预测结果只有两个，一个是<strong>正类（positive class）</strong> 一个是<strong>负类（negative class）</strong>{0，1}or{-1，1}</p>
+<li><p><strong>二分类（binary classification）：</strong> 预测结果只有两个，一个是<strong>正类（positive class）</strong> 一个是<strong>负类（negative class）</strong>{0，1}or{-1，1}</p>
 </li>
-<li>
-<p><strong>多分类（multi-class classification）：</strong> 预测多个结果{1，2，3，…}每个值对应一个结果</p>
+<li><p><strong>多分类（multi-class classification）：</strong> 预测多个结果{1，2，3，…}每个值对应一个结果</p>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>回归（regression）：</strong> 预测连续值（例如瓜的成熟度）</p>
+<li><p><strong>回归（regression）：</strong> 预测连续值（例如瓜的成熟度）</p>
 </li>
 </ul>
-<hr />
+<hr>
 <ul>
-<li>
-<p><strong>测试（testing）：</strong> 学得模型后，使用其进行预测的过程</p>
+<li><p><strong>测试（testing）：</strong> 学得模型后，使用其进行预测的过程</p>
 </li>
-<li>
-<p><strong>测试样本（testing sample）：</strong> 被预测的样本</p>
+<li><p><strong>测试样本（testing sample）：</strong> 被预测的样本</p>
 </li>
 </ul>
-<hr />
+<hr>
 <ul>
-<li>
-<p><strong>聚类（clustering）：</strong> 可以将训练集中的样本分为若干组，以提取组与组之间的潜在特征（可以理解为小时候一组一组的玩伴，玩伴之间都有一些相同的兴趣什么的）</p>
+<li><p><strong>聚类（clustering）：</strong> 可以将训练集中的样本分为若干组，以提取组与组之间的潜在特征（可以理解为小时候一组一组的玩伴，玩伴之间都有一些相同的兴趣什么的）</p>
 </li>
-<li>
-<p><strong>簇（cluster）：</strong> 聚类后训练集形成的组，每个组都是一个簇，<strong>聚类后可以提取数据潜在信息</strong></p>
+<li><p><strong>簇（cluster）：</strong> 聚类后训练集形成的组，每个组都是一个簇，<strong>聚类后可以提取数据潜在信息</strong></p>
 </li>
 </ul>
-<hr />
+<hr>
 <ul>
-<li>
-<p>学习任务可以分为两类：<strong>监督学习（supervised learning）</strong> （分类和回归）和<strong>非监督学习（unsupervised learning）</strong> （聚类）</p>
+<li><p>学习任务可以分为两类：<strong>监督学习（supervised learning）</strong> （分类和回归）和<strong>非监督学习（unsupervised learning）</strong> （聚类）</p>
 </li>
-<li>
-<p><strong>泛化（generalization）：</strong> 学习的模型适应新样本的能力，强泛化能力的模型能更好地适应整个样本空间，通常假设样本空间中全体都服从一个未知的<strong>分布（distribution）</strong> 每个样本都是独立地从分布上采样，即”独立同分布“（independent and identically distributed）一般来说，训练的越多，获得的信息越多，这样学习的模型的泛化能力更强</p>
+<li><p><strong>泛化（generalization）：</strong> 学习的模型适应新样本的能力，强泛化能力的模型能更好地适应整个样本空间，通常假设样本空间中全体都服从一个未知的<strong>分布（distribution）</strong> 每个样本都是独立地从分布上采样，即”独立同分布“（independent and identically distributed）一般来说，训练的越多，获得的信息越多，这样学习的模型的泛化能力更强</p>
 </li>
 </ul>
-<hr />
-<p><strong>归纳（induction）</strong> 与 <strong>演绎（deduction）</strong> 是科学推理的两大基本手段。（可以尝试看一下星群译制组的2分钟论文，可以更好的区分这两个部分）</p>
+<hr>
+<p>    <strong>归纳（induction）</strong> 与 <strong>演绎（deduction）</strong> 是科学推理的两大基本手段。（可以尝试看一下星群译制组的2分钟论文，可以更好的区分这两个部分）</p>
 <ul>
-<li>
-<p>前者是从特殊到一般的 <strong>”泛化“（generalization）</strong> 过程（从特殊的一些数据总结出一般的规律）</p>
+<li><p>前者是从特殊到一般的 <strong>”泛化“（generalization）</strong> 过程（从特殊的一些数据总结出一般的规律）</p>
 </li>
-<li>
-<p>后者是一般到特殊的 <strong>”特化“（specialization）</strong> 过程（与上边泛化正好相反，从基础原理推理出具体状况）</p>
+<li><p>后者是一般到特殊的 <strong>”特化“（specialization）</strong> 过程（与上边泛化正好相反，从基础原理推理出具体状况）</p>
 </li>
 </ul>
 ]]></content>
@@ -353,8 +288,8 @@
   <entry>
     <title>一切的开始</title>
     <url>/2022/12/24/%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B/</url>
-    <content><![CDATA[<p>现在是22年的结束，今年这一年经历了很多很多，随着上半年某个竞赛的获奖，可能自己感觉到自己变得极度自大，再加上身边好多的同学的影响吧，逐渐变得不近人情，之前处的很好的人际关系也有些崩坏，建立这个博客的意思不仅是一个电子笔记分享和存档，也是想让自己有动力学习。希望自己23年再看到这个博客的时候能够无悔这一年的努力~~</p>
-<p>其实还是很感谢AIDC人工智能协会，让我在大三上回到了之前积极向上的状态，从各位同学身上都或多或少学到了一些社交，学习上的知识，虽然目前自己还有一些小毛病，有时候做错了在线下还是会自我反思，希望自己经过这个寒假的调整，会变的更好吧~~</p>
+    <content><![CDATA[<p>    现在是22年的结束，今年这一年经历了很多很多，随着上半年某个竞赛的获奖，可能自己感觉到自己变得极度自大，再加上身边好多的同学的影响吧，逐渐变得不近人情，之前处的很好的人际关系也有些崩坏，建立这个博客的意思不仅是一个电子笔记分享和存档，也是想让自己有动力学习。希望自己23年再看到这个博客的时候能够无悔这一年的努力~~</p>
+<p>    其实还是很感谢AIDC人工智能协会，让我在大三上回到了之前积极向上的状态，从各位同学身上都或多或少学到了一些社交，学习上的知识，虽然目前自己还有一些小毛病，有时候做错了在线下还是会自我反思，希望自己经过这个寒假的调整，会变的更好吧~~</p>
 ]]></content>
       <categories>
         <category>生活</category>
