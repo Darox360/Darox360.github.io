@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>YUV---色彩编码系统</title>
+    <url>/2022/12/29/YUV-%E8%89%B2%E5%BD%A9%E7%BC%96%E7%A0%81%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><strong>摘要：</strong> <a
+href="%5BYUV%20-%20Wikipedia%5D(https://en.wikipedia.org/wiki/YUV)"><strong>YUV</strong></a>是一种彩色编码系统，主要用在视频、图形处理流水线中(pipeline)。相对于
+RGB 颜色空间，设计 YUV
+的目的就是为了编码、传输的方便，减少带宽占用和信息出错。可以更便捷的提取出图像的色彩信息。</p>
+<p><span id="more"></span></p>
+<h4 id="详细原理">详细原理</h4>
+<h4 id="实现代码">实现代码</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#方法一：具体算法</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rgb2yuv</span>(<span class="params">r, g, b</span>):</span><br><span class="line">    y = <span class="number">0.299</span> * r + <span class="number">0.587</span> * g + <span class="number">0.114</span> * b</span><br><span class="line">    u = -<span class="number">0.14713</span> * r - <span class="number">0.28886</span> * g + <span class="number">0.436</span> * b</span><br><span class="line">    v = <span class="number">0.615</span> * r - <span class="number">0.51499</span> * g - <span class="number">0.10001</span> * b</span><br><span class="line">    <span class="keyword">return</span> y, u, v</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二：调用库</span></span><br><span class="line">img = cv.imread(<span class="string">&#x27;f2.jpg&#x27;</span>, cv.IMREAD_UNCHANGED)</span><br><span class="line">im1 = cv.cvtColor(img, cv.COLOR_RGB2YUV)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-1-4归纳偏好</title>
     <url>/2022/12/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1-4%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD/</url>
     <content><![CDATA[<p><strong>摘要：</strong>
