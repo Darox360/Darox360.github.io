@@ -27,20 +27,20 @@ daovoice('update');
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="摘要： 本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。">
+    <meta name="description" content="摘要： 本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-1-4归纳偏好">
 <meta property="og:url" content="http://example.com/2022/12/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-1-4%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD/index.html">
 <meta property="og:site_name" content="Darox360的Blog~~">
-<meta property="og:description" content="摘要： 本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。">
+<meta property="og:description" content="摘要： 本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/1-4%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD/1.jpg">
 <meta property="article:published_time" content="2022-12-28T02:08:24.000Z">
-<meta property="article:modified_time" content="2022-12-28T02:55:58.264Z">
+<meta property="article:modified_time" content="2022-12-28T13:01:47.868Z">
 <meta property="article:author" content="Darox360_ovo_">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="奥卡姆剃刀">
-<meta property="article:tag" content="“没有免费的午餐”定理">
+<meta property="article:tag" content="“没有免费午餐”定理NFL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/1-4%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD/1.jpg">
 
@@ -154,7 +154,7 @@ daovoice('update');
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80%EF%BC%88%E7%AE%80%E5%8D%95%E5%8C%96%E6%B3%95%E5%88%99%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">奥卡姆剃刀（简单化法则）</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80%E7%AE%80%E5%8D%95%E5%8C%96%E6%B3%95%E5%88%99"><span class="nav-number">2.</span> <span class="nav-text">奥卡姆剃刀（简单化法则）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E7%9A%84%E5%8D%88%E9%A4%90%E5%AE%9A%E7%90%86nfl"><span class="nav-number">3.</span> <span class="nav-text">”没有免费的午餐“定理（NFL）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -222,7 +222,7 @@ setInterval("createtime()",250);
     <h3 class="widget-title">Tag Cloud</h3>
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width:100%">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E7%9A%84%E5%8D%88%E9%A4%90%E2%80%9D%E5%AE%9A%E7%90%86/" rel="tag">“没有免费的午餐”定理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%AE%A1%E7%AE%97/" rel="tag">复杂度计算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80/" rel="tag">奥卡姆剃刀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD%E8%A7%A3%E9%87%8A/" rel="tag">术语解释</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E5%8D%88%E9%A4%90%E2%80%9D%E5%AE%9A%E7%90%86NFL/" rel="tag">“没有免费午餐”定理NFL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%AE%A1%E7%AE%97/" rel="tag">复杂度计算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80/" rel="tag">奥卡姆剃刀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD%E8%A7%A3%E9%87%8A/" rel="tag">术语解释</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a><span class="tag-list-count">1</span></li></ul>
         </canvas>
     </div>
 </div>
@@ -276,7 +276,7 @@ setInterval("createtime()",250);
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-12-28 10:08:24 / 修改时间：10:55:58" itemprop="dateCreated datePublished" datetime="2022-12-28T10:08:24+08:00">2022-12-28</time>
+      <time title="创建时间：2022-12-28 10:08:24 / 修改时间：21:01:47" itemprop="dateCreated datePublished" datetime="2022-12-28T10:08:24+08:00">2022-12-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@ setInterval("createtime()",250);
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>611</span>
+      <span>926</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -320,17 +320,40 @@ setInterval("createtime()",250);
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><strong>摘要：</strong> 本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。</p>
+        <p><strong>摘要：</strong>
+本节主要讲解关于我们上节提到的版本空间对于模型最后模型结果的影响，讨论学习算法如何选择最好的假设。</p>
 <span id="more"></span>
-
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>我们在上一节提到了<strong>版本空间</strong>的概念，但是对于实际问题而言，新提供的样本可能满足版本空间中的多个假设，相同的，也会有很多假设不满足，因此我们就需要让学习算法去选择最适合的假设。因此我们就需要让学习算法在学习过程中有 <strong>“偏好”</strong>。</p>
-<p>就好比你喜欢吃的一类菜，你在做菜时会不由自主的往那上边靠近，这便是偏好。一个学习算法必须有 <strong>“归纳偏好”</strong>，不然如果学习算法对所有假设都一视同仁的话，无法产生一个确定的模型。</p>
-<p><img src="/images/1-4%E5%BD%92%E7%BA%B3%E5%81%8F%E5%A5%BD/1.jpg" alt="image1"></p>
+<h4 id="前言">前言</h4>
+<p>我们在上一节提到了<strong>版本空间</strong>的概念，但是对于实际问题而言，新提供的样本可能满足版本空间中的多个假设，相同的，也会有很多假设不满足，因此我们就需要让学习算法去选择最适合的假设。因此我们就需要让学习算法在学习过程中有
+<strong>“偏好”</strong>。</p>
+<p>就好比你喜欢吃的一类菜，你在做菜时会不由自主的往那上边靠近，这便是偏好。一个学习算法必须有
+<strong>“归纳偏好”</strong>，不然如果学习算法对所有假设都一视同仁的话，无法产生一个确定的模型。</p>
+<figure>
+<img src="/images/1-4归纳偏好/1.jpg" alt="image1" />
+<figcaption aria-hidden="true">image1</figcaption>
+</figure>
 <p>就好比上边这个图，可能存在多个曲线可以和训练的样本重合（黑点），而我们可以使得学习算法更偏好某一条线，我们从上图来看，肯定会觉得<strong>蓝线</strong>更符合实际。（这一部分在数值分析中也会提到，可以移步至数值分析）</p>
-<h4 id="奥卡姆剃刀（简单化法则）"><a href="#奥卡姆剃刀（简单化法则）" class="headerlink" title="奥卡姆剃刀（简单化法则）"></a>奥卡姆剃刀（简单化法则）</h4><p>这个原理称为“如无必要，勿增实体”，即“简单有效原理”。他在《箴言书注》2卷15题说“切勿浪费较多东西，去做‘用较少的东西，同样可以做好的事情’。</p>
+<h4 id="奥卡姆剃刀简单化法则">奥卡姆剃刀（简单化法则）</h4>
+<p>这个原理称为“如无必要，勿增实体”，即“简单有效原理”。他在《箴言书注》2卷15题说“切勿浪费较多东西，去做‘用较少的东西，同样可以做好的事情’。</p>
 <p>换一种说法，如果关于同一个问题有许多种理论，每一种都能作出同样准确的预言，那么应该挑选其中使用假定最少的。尽管越复杂的方法通常能作出越好的预言，但是在不考虑预言能力的情况下，前提假设越少越好。</p>
-<p>用在学习算法上来看，就是想办法让模型在所有假设中找到 <strong>“更平滑”</strong>，<strong>“更简单”</strong> 的假设。</p>
-<p><strong>但是！！</strong> 这些所谓的平滑和简单都是建立在实际的问题中，是存在<strong>绿线</strong>更贴合实际问题的可能的</p>
+<p>用在学习算法上来看，就是想办法让模型在所有假设中找到
+<strong>“更平滑”</strong>，<strong>“更简单”</strong> 的假设。</p>
+<p><strong>但是！！这些所谓的平滑和简单都是建立在实际的问题中</strong>，是存在<strong>绿线</strong>更贴合实际问题的可能的，我们在下文会有证明</p>
+<h4 id="没有免费的午餐定理nfl">”没有免费的午餐“定理（NFL）</h4>
+<p>假设样本空间 <span
+class="math inline">\(\chi\)</span> 和假设空间 <span
+class="math inline">\(H\)</span> 都是离散的，令<span
+class="math inline">\(P(h|X,\xi_a)\)</span>代表算法<span
+class="math inline">\(\xi_a\)</span>基于训练数据 <span
+class="math inline">\(X\)</span> 产生假设 h 的概率，再令 f 代表我们希望学习的真实目标函数。那么<span
+class="math inline">\(\xi_a\)</span>的训练集外误差，即<span
+class="math inline">\(\xi_a\)</span>在训练集之外的所有样本上的误差为:</p>
+<p><span class="math display">\[
+E_{ote}(\xi_a|X,f)=\sum_{h}\sum_{x\in\chi-X}P(x) \mathbb I(h(x) \neq
+f(x)) P(h|X,\xi_a)
+\]</span></p>
+<p>其中， <span class="math inline">\(\mathbb
+I(*)\)</span> 是指示函数，若 (*) 为真取值1，否则取值0。相当于编程中的if函数。</p>
 
     </div>
 
@@ -342,7 +365,7 @@ setInterval("createtime()",250);
           <div class="post-tags">
               <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
               <a href="/tags/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80/" rel="tag"># 奥卡姆剃刀</a>
-              <a href="/tags/%E2%80%9C%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E7%9A%84%E5%8D%88%E9%A4%90%E2%80%9D%E5%AE%9A%E7%90%86/" rel="tag"># “没有免费的午餐”定理</a>
+              <a href="/tags/%E2%80%9C%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E5%8D%88%E9%A4%90%E2%80%9D%E5%AE%9A%E7%90%86NFL/" rel="tag"># “没有免费午餐”定理NFL</a>
           </div>
 
         
@@ -391,7 +414,7 @@ setInterval("createtime()",250);
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
