@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+ daovoice('init', {
+  app_id: "03419df3"
+});
+daovoice('update');
+ </script>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32-32-tree.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16-16-tree.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="[!md]Metadata 标题:: 教你如何继续压榨 GPU 的算力 日期:: 2023-04-13 12:03:37 链接:: https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;346389176 ### 前言  你的 GPU 是不是一张卡有多个任务，利用率是不是高到上不去了？那么福利来了，不管你是训练还是推理，不用修改代码，你的速度还有可能更快，就是让 GPU 进入”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="教你如何继续压榨 GPU 的算力">
+<meta property="og:url" content="http://example.com/2023/04/13/HPC%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%8E%8B%E6%A6%A8%20GPU%20%E7%9A%84%E7%AE%97%E5%8A%9B/index.html">
+<meta property="og:site_name" content="Darox360的Blog~~">
+<meta property="og:description" content="[!md]Metadata 标题:: 教你如何继续压榨 GPU 的算力 日期:: 2023-04-13 12:03:37 链接:: https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;346389176 ### 前言  你的 GPU 是不是一张卡有多个任务，利用率是不是高到上不去了？那么福利来了，不管你是训练还是推理，不用修改代码，你的速度还有可能更快，就是让 GPU 进入”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-89fc0d842708090fd01c68c9e7a95007_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-18088a552be77fc4671c63835be5f34e_b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-7cfdec0a9e46ead8af94eeb57ec5a9c6_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-36d4205149f51786fae0034d72eae6e8_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-3cc2a1513d037221ddf27e47aa3061c3_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-35e4b3aab73a6fa2c293425304569e31_r.jpg">
+<meta property="article:published_time" content="2023-04-13T04:03:37.000Z">
+<meta property="article:modified_time" content="2023-04-13T08:59:38.678Z">
+<meta property="article:author" content="Darox360_ovo_">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-89fc0d842708090fd01c68c9e7a95007_r.jpg">
+
+
+<link rel="canonical" href="http://example.com/2023/04/13/HPC%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%8E%8B%E6%A6%A8%20GPU%20%E7%9A%84%E7%AE%97%E5%8A%9B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/04/13/HPC%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%8E%8B%E6%A6%A8%20GPU%20%E7%9A%84%E7%AE%97%E5%8A%9B/","path":"2023/04/13/HPC高性能计算/教你如何继续压榨 GPU 的算力/","title":"教你如何继续压榨 GPU 的算力"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>教你如何继续压榨 GPU 的算力 | Darox360的Blog~~</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Darox360的Blog~~</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录生活中的点点滴滴</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+    
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3-gpu-%E5%88%A9%E7%94%A8%E7%8E%87%E6%98%AF%E4%BB%80%E4%B9%88%E5%90%97"><span class="nav-number">2.</span> <span class="nav-text">你真的理解 GPU
+利用率是什么吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E7%9A%84%E6%8F%90%E5%8D%87%E7%AE%97%E5%8A%9B%E6%B6%88%E8%80%97%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BD%A0%E9%83%BD%E7%94%A8%E4%BA%86%E5%90%97"><span class="nav-number">3.</span> <span class="nav-text">常规的提升算力消耗的方式你都用了吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1%E6%A8%A1%E5%BC%8F---mps"><span class="nav-number">4.</span> <span class="nav-text">多任务模式 - MPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BA%8B%E6%83%85"><span class="nav-number">5.</span> <span class="nav-text">一个神奇的事情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9%E5%9D%91"><span class="nav-number">6.</span> <span class="nav-text">需要注意的事项（坑）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Darox360_ovo_"
+      src="/images/1.jpg">
+  <p class="site-author-name" itemprop="name">Darox360_ovo_</p>
+  <div class="site-description" itemprop="description">自律学习中，虚心接受知识~~~</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Darox360" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Darox360" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2932002441@qq.com" title="E-Mail → mailto:2932002441@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+      <div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("12/20/2022 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本博客已经使用<br>"+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+          
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width:100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9C%E6%B2%A1%E6%9C%89%E5%85%8D%E8%B4%B9%E5%8D%88%E9%A4%90%E2%80%9D%E5%AE%9A%E7%90%86NFL/" rel="tag">“没有免费午餐”定理NFL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E8%AE%A1%E7%AE%97/" rel="tag">复杂度计算</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80/" rel="tag">奥卡姆剃刀</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/" rel="tag">数据科学</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AF%E8%AF%AD%E8%A7%A3%E9%87%8A/" rel="tag">术语解释</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="tag">线性表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" rel="tag">自然语言处理</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/HPC%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%8E%8B%E6%A6%A8%20GPU%20%E7%9A%84%E7%AE%97%E5%8A%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="Darox360_ovo_">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Darox360的Blog~~">
+      <meta itemprop="description" content="自律学习中，虚心接受知识~~~">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="教你如何继续压榨 GPU 的算力 | Darox360的Blog~~">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          教你如何继续压榨 GPU 的算力
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-13 12:03:37 / 修改时间：16:59:38" itemprop="dateCreated datePublished" datetime="2023-04-13T12:03:37+08:00">2023-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HPC%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/" itemprop="url" rel="index"><span itemprop="name">HPC高性能计算</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>[!md]Metadata <strong>标题</strong>:: 教你如何继续压榨 GPU 的算力
+<strong>日期</strong>:: 2023-04-13 12:03:37 <strong>链接</strong>::
+https://zhuanlan.zhihu.com/p/346389176 ### 前言</p>
+</blockquote>
+<p>你的 GPU
+是不是一张卡有多个任务，利用率是不是高到上不去了？那么福利来了，不管你是训练还是推理，不用修改代码，你的速度还有可能更快，就是让
+GPU 进入” 多任务模式 “。</p>
+<p>MPS(Multi-Process Service)
+是一种支持多任务模式的方法，它跟网络、框架（PyTorch/Tensorflow/others）无关，只跟任务数量以及硬件相关，由于尝试成本比较低，那就试一下吧，收获还不小，简单聊一点。</p>
+<h3 id="使用">使用</h3>
+<p>先来看一下，为什么说尝试成本低，请看使用方法（bash 命令，用 root
+权限运行）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># ====== 启动 =========</span><br><span class="line">export CUDA_VISIBLE_DEVICES=0         # 这里以GPU0为例，其他卡类似</span><br><span class="line">nvidia-smi -i 0 -c EXCLUSIVE_PROCESS  # 让GPU0变为独享模式。</span><br><span class="line">nvidia-cuda-mps-control -d            # 开启mps服务 </span><br><span class="line"># ====== 查看 =========</span><br><span class="line">ps -ef | grep mps                     # 启动成功后能看到相应的进程</span><br><span class="line"># ====== 停止 =========</span><br><span class="line">nvidia-smi -i 0 -c DEFAULT       # 让GPU恢复为默认模式。</span><br><span class="line">echo quit | nvidia-cuda-mps-control   # 关闭mps服务      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>就这么简单。先查看启动成功了没有，跑任务时会多出一个服务进程，其中
+"独享模式" 可以不打开，但建议开启。nvidia-smi 查看，如下图所示：</p>
+<p><img src="https://pic4.zhimg.com/v2-89fc0d842708090fd01c68c9e7a95007_r.jpg"></p>
+<p>启动成功了，你就直接跑任务就行了，该怎么训练就怎么训练，该怎么推理怎么推理，之后的任务类型
+Type 都是”M+C“，说明 MPS
+用上了。你会发现，在多任务的情况下，速度变快了，尤其是在 GPU
+利用率已很高的情况下，给你带来的收益更多。</p>
+<p>========================= 接下来，说点有意思的事情：</p>
+<h3 id="你真的理解-gpu-利用率是什么吗">你真的理解 GPU
+利用率是什么吗？</h3>
+<p>在运行任务时，大部分人通过 “nvidia-smi” 来查看 GPU 的利用率 “Volatile
+GPU Util", (当然还可以用“nvidia-smi pmon”
+看得更细)。关于这个利用率，容易产生两个误区：</p>
+<p><strong>误区一：</strong> GPU 的利用率 = GPU 内计算单元干活的比例。
+利用率越高，算力就必然发挥得越充分。</p>
+<p><strong>误区二：</strong> 同条件下，利用率越高，耗时一定越短。</p>
+<p><img src="https://pic3.zhimg.com/v2-18088a552be77fc4671c63835be5f34e_b.jpg"></p>
+<p>真的不是这样” 一定 “，请先看理论解释，搬上 NVIDIA
+官方对利用率（utilization）的原话 [3]：</p>
+<p>Percent of time over the past sample period during which one or more
+kernels was executing on the GPU.The sample period may be between 1
+second and 1/6 second depending on the product.</p>
+<p>翻译一下：采样时间段内，1
+个及其以上的核（kernel）运行的时间的占比。这个采样时间段取多长，跟产品相关，可能值
+1/6s~1s。</p>
+<p>划重点：“<strong>one or more kernels”</strong>。这个意味着里面只要有
+1 个 kernel 在执行，你的 GPU 利用率也可以很高。 而 1 个 kernel
+不是一定让 GPU 内部的运算单元（core）都工作的。</p>
+<p><img src="https://pic3.zhimg.com/v2-7cfdec0a9e46ead8af94eeb57ec5a9c6_b.jpg"></p>
+<p>kernel 和 core 是 CUDA 编程相关的概念
+[4]，暂时不理解没关系。只要记住一个事实：GPU 利用率 99%，并不能说明你的
+GPU 就使出了 99% 的力气。这个利用率只能说明，有 kernel
+在运算，至于算得怎么样，算力发挥出来了没有，<strong>光看这个利用率是判断不出来的</strong>。</p>
+<p>进一步，并不是利用率越高，耗时就会越短，反之亦然。举个例子，用了 MPS
+后，<strong>利用率降低了，训练反而更快了</strong>（请看后面说的
+“<strong>一个神奇的事情</strong>”）。</p>
+<p>所以在同条件下，应该是 GPU 算力用得越充分，耗时才会越短。</p>
+<h3 id="常规的提升算力消耗的方式你都用了吗">常规的提升算力消耗的方式你都用了吗？</h3>
+<p>本文推荐的 MPS 方式是继续压榨
+GPU，常规压榨你都试了吗？没有的话先试试。大部分情况下，提升 GPU
+利用率是有利于算力的发挥地。提升利用率的方法可以从任务本身着手，比如增加数据大小（更大的
+batch_size、网络），缩减 I/O 时间，
+提前加载数据等手段；另外就是同时<strong>送入多个任务</strong>给
+GPU，多个任务操作互补（有些操作不需要 GPU 工作），让 GPU
+运算不闲着。</p>
+<p><img src="https://pic1.zhimg.com/v2-36d4205149f51786fae0034d72eae6e8_r.jpg"></p>
+<p>这些方法都是在宏观维度从时间以及空间上压榨算力，接下来说个微观维度的手段：多任务模式。</p>
+<h3 id="多任务模式---mps">多任务模式 - MPS</h3>
+<p>如果你的 GPU
+有两个及以上的任务一起运行，那么你就可以考虑用多任务模式来继续压榨 GPU
+算力，目前我们能接触的工具 NVIDIA MPS。</p>
+<p>简单介绍一下原理，一般 GPU 上运行多个任务，都是采用 "单任务"
+的工作模式，既同一个时刻只有一个任务（用不同的 context 区分）在 GPU
+中运行。通俗一点，假如你起了两个任务 A 和 B（训练和推理无所谓，python
+起来的独立进程就行），单任务模式下，A 和 B
+是排队干活的，（“我怎么感受不到这个排队过程？” ---
+这个时间非常小，是一种并发的操作，感觉在好像在一起工作）；另一种是多任务模式，就是
+A 和 B 可以同时干活， 请看下图：</p>
+<p><img src="https://pic4.zhimg.com/v2-3cc2a1513d037221ddf27e47aa3061c3_r.jpg"></p>
+<p>由于共用了 context，同一时刻两个可以一起跑。这样更加充分的利用了 GPU
+的算力，MPS 的详细原理文末附上 [1]。</p>
+<p>有了 MPS，原来偷懒的 core 就被调用起来了，这样 GPU
+的算力发挥得更充分了。</p>
+<h3 id="一个神奇的事情">一个神奇的事情</h3>
+<p>在部分情况下，用了 MPS
+后出现了利用率降低的现象，但训练的时间却变短了。例子：GPU 里面跑了两个
+ImageNet 的分类训练的任务，GPU 利用率维持在了稳定的 86% 左右。</p>
+<p>请看如下对比数据：</p>
+<p><img src="https://pic2.zhimg.com/v2-35e4b3aab73a6fa2c293425304569e31_r.jpg"></p>
+<p>没错，MPS 让利用率变低了，86% -&gt; 53%，为什么会降低，结合上面对 GPU
+利用率的解释不难理解，在共享模式下，由于两个任务可以同时干活，所以反而对
+GPU 的占用时间变小了，nvidia-smi 上看到的利用率就变低了。</p>
+<p>这个测试比较好复现，只要是两个及以上的任务，而且总的利用率不要超出
+90%，基本上都能看到这样的结果。当然，不是所有条件下的任务都是这么神奇，比如任务数量只有一个，或者任务数量多（单个任务的利用率都很高）的时候结论又不是这样了，读者可以自行测试。</p>
+<h3 id="需要注意的事项坑">需要注意的事项（坑）</h3>
+<p>MPS 的 service 下，只要里面一个任务出错 /
+失败，可能使得所有在里面的任务都运行失败，原因可以详细的看一下 [1]
+中内容。虽然 CUDA 层触发的 CUDA_Error 是没有这个问题的，但 driver
+层错误就不一定，比如 core
+dump（暂不详细展开）。这个问题需要注意的地方就是，对于多人（或者不同性质的作业）共用一张卡时，需要避免底层错误。（对于个人研发而言，如果不会处理，先用着吧，挂了就重来呗）</p>
+<p><strong>写在最后：</strong></p>
+<p>对于”单任务模式 “和” 多任务模式 “这两个名词，其实是对 NVIDIA GPU
+的任务处理的方式的一种理解性翻译，国内有些文章中翻译成了” 分时复用 “、”
+共享模式
+“，感觉也可以，但不那么直观。若要更好的理解，推荐好好阅读一下[1]
+中内容。</p>
+<h3 id="参考">参考：</h3>
+<p>[1] <a href="https://link.zhihu.com/?target=https%3A//docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf">https://docs.nvidia.com/deploy/pdf/CUDA_Multi_Process_Service_Overview.pdf</a></p>
+<p>[2] <a href="https://link.zhihu.com/?target=https%3A//www.nvidia.cn/content/dam/en-zz/zh_cn/assets/webinars/31oct2019c/20191031_MPS_davidwu.pdf">https://www.nvidia.cn/content/dam/en-zz/zh_cn/assets/webinars/31oct2019c/20191031_MPS_davidwu.pdf</a></p>
+<p>[3] <a href="https://link.zhihu.com/?target=https%3A//developer.download.nvidia.com/compute/DCGM/docs/nvidia-smi-367.38.pdf">https://developer.download.nvidia.com/compute/DCGM/docs/nvidia-smi-367.38.pdf</a></p>
+<p>[4] <a href="https://link.zhihu.com/?target=https%3A//developer.nvidia.com/zh-cn/cuda-toolkit">CUDA
+工具包</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/25/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%AC%E4%B8%80%E4%BA%8C%E4%B8%89%E8%8C%83%E5%BC%8F%E5%88%B0%E5%BA%95%E5%9C%A8%E8%AF%B4%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="prev" title="数据库第一二三范式到底在说什么？">
+                  <i class="fa fa-chevron-left"></i> 数据库第一二三范式到底在说什么？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86-%E7%9B%AE%E5%BD%95/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-sharp fa-solid fa-leaf"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Darox360_ovo_</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">53k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">48 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
