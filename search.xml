@@ -20,20 +20,4 @@
         <tag>日记</tag>
       </tags>
   </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2025/01/26/20250126185944/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>程序 $A_{ij}$ 结束</p>
-<p>$$<br>\cfrac{1}{a + \cfrac{7}{b + \cfrac{2}{9}}} &#x3D;c<br>$$<br><img src="https://darox-360-1301563786.cos.ap-nanjing.myqcloud.com/_blog/717ef407-0419-4fc3-b64c-972ff23768aa.png" alt="717ef407-0419-4fc3-b64c-972ff23768aa.png"></p>
-]]></content>
-      <categories>
-        <category>体系结构</category>
-        <category>计算机体系结构-量化研究方法</category>
-      </categories>
-      <tags>
-        <tag>体系结构</tag>
-      </tags>
-  </entry>
 </search>
