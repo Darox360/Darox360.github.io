@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>博客的起源</title>
+    <url>/2020/11/19/20201119210733/</url>
+    <content><![CDATA[<p>这里是 Darox360 的博客，记录一些游戏制作和前端的学习笔记，以及一些生活上的感悟，希望可以和各位一起进步，一起成长。</p>
+<span id="more"></span>
+
+<p>— 2022.12.24 —</p>
+<p>现在是22年的结束，今年这一年经历了很多很多，随着上半年某个竞赛的获奖，可能自己感觉到自己变得极度自大，再加上身边好多的同学的影响吧，逐渐变得不近人情，之前处的很好的人际关系也有些崩坏，建立这个博客的意思不仅是一个电子笔记分享和存档，也是想让自己有动力学习。希望自己23年再看到这个博客的时候能够无悔这一年的努力~~</p>
+<p>其实还是很感谢AIDC人工智能协会，让我在大三上回到了之前积极向上的状态，从各位同学身上都或多或少学到了一些社交，学习上的知识，虽然目前自己还有一些小毛病，有时候做错了在线下还是会自我反思，希望自己经过这个寒假的调整，会变的更好吧~~</p>
+<p>— 2025.01.25 —</p>
+<p>之前写的博客感觉有好多地方写的不太好，而且再加上自己也不再继续那个方向了（主要是有强迫症），就把 Blog 又双重置了一遍，所以现在的版本是重置重制版。</p>
+<p>大学这些年经历了许多事情，感觉自己的观念也和之前有了很多不同的想法。看到当年给自己大学四年后写的信，当时确实有很多事情想简单了，和之前规划的方向有很大出入，大学期间换了三四个方向，现在也算是定下来了，但是我觉得身处现在这个巨变的时代，估计未来还会有很多改变，过些年再看看自己的改变吧hhhh。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2025/01/26/20250126185944/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>程序 $A_{ij}$ 结束</p>
+<p>$$<br>\cfrac{1}{a + \cfrac{7}{b + \cfrac{2}{9}}} &#x3D;c<br>$$</p>
+<p><img src="https://darox-360-1301563786.cos.ap-nanjing.myqcloud.com/_pic/20230807170657.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>体系结构</category>
+        <category>计算机体系结构-量化研究方法</category>
+      </categories>
+      <tags>
+        <tag>体系结构</tag>
+      </tags>
+  </entry>
+</search>
