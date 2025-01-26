@@ -26,8 +26,7 @@
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <p>程序 $A_{ij}$ 结束</p>
-<p>$$<br>\cfrac{1}{a + \cfrac{7}{b + \cfrac{2}{9}}} &#x3D;c<br>$$</p>
-<p><img src="https://darox-360-1301563786.cos.ap-nanjing.myqcloud.com/_pic/20230807170657.png" alt="image.png"></p>
+<p>$$<br>\cfrac{1}{a + \cfrac{7}{b + \cfrac{2}{9}}} &#x3D;c<br>$$<br><img src="https://darox-360-1301563786.cos.ap-nanjing.myqcloud.com/_blog/717ef407-0419-4fc3-b64c-972ff23768aa.png" alt="717ef407-0419-4fc3-b64c-972ff23768aa.png"></p>
 ]]></content>
       <categories>
         <category>体系结构</category>
