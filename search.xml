@@ -3,7 +3,7 @@
   <entry>
     <title>博客的起源</title>
     <url>/2020/11/19/20201119210733/</url>
-    <content><![CDATA[<p>这里是 Darox360 的博客，记录一些游戏制作和前端的学习笔记，以及一些生活上的感悟，希望可以和各位一起进步，一起成长。</p>
+    <content><![CDATA[<p>这里是 Darox360 的博客，记录一些日常的学习笔记，以及一些生活上的感悟，希望可以和各位一起进步，一起成长。</p>
 <span id="more"></span>
 
 <p>— 2022.12.24 —</p>
@@ -24,10 +24,24 @@
     <title>深入理解并行原理 - 目录</title>
     <url>/2025/01/26/20250126221625/</url>
     <content><![CDATA[<p>英文原名为 “<a href="https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html">Is Parallel Programming Hard, And, If So, What Can You Do About It?</a>”</p>
-<p>已经忘记曾经在什么地方看到的这本书了，记得当时看到这本书前面几章让我大受震撼，内容非常多，而且截止到创建这篇博客开始，这本书的内容依然在更新（目前已经持续更新四年了）我想就目前的版本将这本书的学习历程做个分享，以便大家都能更好的了解到这本书的价值。</p>
+<p>已经忘记曾经在什么地方看到的这本书了，记得当时看到这本书前面几章让我大受震撼，内容非常多，截止到创建这篇博客开始，这本书的内容依然在更新（目前已经持续更新四年了）我想就目前的版本将这本书的学习历程做个分享，以便大家都能更好的了解到这本书的价值。</p>
 <span id="more"></span>
 
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2>]]></content>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>- </p>
+]]></content>
+      <categories>
+        <category>并行计算</category>
+        <category>Is Parallel Programming Hard, And, If So, What Can You Do About It</category>
+      </categories>
+      <tags>
+        <tag>并行计算</tag>
+        <tag>高性能计算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一章 - 怎么使用这本书</title>
+    <url>/2025/01/26/20250126223330/</url>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>并行计算</category>
         <category>Is Parallel Programming Hard, And, If So, What Can You Do About It</category>
